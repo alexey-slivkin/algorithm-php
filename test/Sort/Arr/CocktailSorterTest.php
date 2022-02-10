@@ -7,7 +7,6 @@ namespace App\Test\Sort\Arr;
 use App\Sort\Arr\AbstractSorter;
 use App\Sort\Arr\CocktailSorter;
 use App\Sort\Arr\Comparator\ComparatorInterface;
-use PHPUnit\Framework\TestCase;
 
 final class CocktailSorterTest extends AbstractSorterTest
 {

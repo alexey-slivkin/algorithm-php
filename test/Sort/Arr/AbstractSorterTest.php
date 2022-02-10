@@ -7,6 +7,7 @@ namespace App\Test\Sort\Arr;
 use App\Sort\Arr\AbstractSorter;
 use App\Sort\Arr\Comparator\ComparatorInterface;
 use App\Sort\Arr\Comparator\IntegerComparator;
+use PHPUnit\Framework\TestCase;
 
 abstract class AbstractSorterTest extends TestCase
 {
