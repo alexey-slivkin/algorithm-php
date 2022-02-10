@@ -8,9 +8,6 @@ final class BubbleSorter extends AbstractSorter
 {
     /**
      * Complexity: O(n^2)
-     *
-     * @param array $elements
-     * @return array
      */
     function sort(array $elements): array
     {
@@ -21,7 +18,6 @@ final class BubbleSorter extends AbstractSorter
             $isSorted = true;
             for ($i = 0; $i < $n - 1; $i++) {
                 $j = $i + 1;
-
                 if ($this->comparator->firstGreater($elements[$i], $elements[$j])) {
                     $isSorted = false;
                     // swap
