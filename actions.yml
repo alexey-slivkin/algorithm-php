@@ -1,0 +1,13 @@
+name: 'Algorithms'
+description: 'Algorithms desc'
+inputs:
+  alg-unit-tests:
+    description: 'Run unit tests'
+    required: true
+outputs:
+  time:
+    description: 'The End'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
