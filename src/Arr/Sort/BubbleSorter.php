@@ -9,7 +9,7 @@ final class BubbleSorter extends AbstractSorter
     /**
      * Complexity: O(n^2)
      */
-    function sort(array $elements): array
+    public function sort(array $elements): array
     {
         $n = count($elements);
 
@@ -20,8 +20,7 @@ final class BubbleSorter extends AbstractSorter
                 $j = $i + 1;
                 if ($this->comparator->firstGreater($elements[$i], $elements[$j])) {
                     $isSorted = false;
-                    // swap
-                    [$elements[$i], $elements[$j]] = [$elements[$j], $elements[$i]];
+                    $this->swap($elements, $i, $j);
                 }
             }
         }

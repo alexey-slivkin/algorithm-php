@@ -13,5 +13,10 @@ abstract class AbstractSorter
     ) {
     }
 
-    abstract function sort(array $elements): array;
+    abstract public function sort(array $elements): array;
+
+    protected function swap(array &$elements, int $i, int $j): void
+    {
+        [$elements[$i], $elements[$j]] = [$elements[$j], $elements[$i]];
+    }
 }
