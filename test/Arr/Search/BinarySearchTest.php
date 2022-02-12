@@ -9,6 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 final class BinarySearchTest extends TestCase
 {
+    /**
+     * @dataProvider casesProvider
+     */
     public function testSearch(int $needle, array $haystack, int|null $expectedIndex): void
     {
         $searchService = new BinarySearch();
@@ -18,7 +21,7 @@ final class BinarySearchTest extends TestCase
         self::assertSame($expectedIndex, $foundIndex);
     }
 
-    public function testCasesProvider(): iterable
+    public function casesProvider(): iterable
     {
         yield 'not found' => [
             'needle'         => 2,
