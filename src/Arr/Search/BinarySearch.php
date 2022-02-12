@@ -29,7 +29,7 @@ final class BinarySearch
             if ($needle < $current) {
                 $end = $middle - 1;
             } else {
-                $start = $end + 1;
+                $start = $middle + 1;
             }
         }
 
