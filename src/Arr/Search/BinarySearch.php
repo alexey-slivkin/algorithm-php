@@ -12,7 +12,7 @@ final class BinarySearch
      * @param list<mixed> $haystack
      * @return int|null
      */
-    public function search(array $needle, mixed $haystack): int|null
+    public function search(mixed $needle, array $haystack): int|null
     {
         $start = 0;
         $end   = count($haystack) - 1;
