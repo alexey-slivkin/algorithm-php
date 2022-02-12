@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Test\Sort\Arr;
+namespace App\Test\Arr\Sort;
 
-use App\Sort\Arr\AbstractSorter;
-use App\Sort\Arr\CocktailSorter;
-use App\Sort\Arr\Comparator\ComparatorInterface;
+use App\Arr\Sort\AbstractSorter;
+use App\Arr\Sort\CocktailSorter;
+use App\Arr\Comparator\ComparatorInterface;
 
 final class CocktailSorterTest extends AbstractSorterTest
 {

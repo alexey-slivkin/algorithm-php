@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Sort\Arr;
+namespace App\Arr\Sort;
 
 final class CocktailSorter extends AbstractSorter
 {

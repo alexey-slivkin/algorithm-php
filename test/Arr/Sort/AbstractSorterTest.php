@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Test\Sort\Arr;
+namespace App\Test\Arr\Sort;
 
-use App\Sort\Arr\AbstractSorter;
-use App\Sort\Arr\Comparator\ComparatorInterface;
-use App\Sort\Arr\Comparator\IntegerComparator;
+use App\Arr\Sort\AbstractSorter;
+use App\Arr\Comparator\ComparatorInterface;
+use App\Arr\Comparator\IntegerComparator;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractSorterTest extends TestCase
