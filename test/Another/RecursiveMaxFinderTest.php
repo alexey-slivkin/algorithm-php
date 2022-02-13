@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 final class RecursiveMaxFinderTest extends TestCase
 {
-    public function testCalculateSum(): void
+    public function testFindMax(): void
     {
         $calculator = new RecursiveMaxFinder();
 
