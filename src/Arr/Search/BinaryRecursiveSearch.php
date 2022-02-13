@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Arr\Search;
 
-final class BinaryRecursiveSearch
+final class BinaryRecursiveSearch implements SearchInterface
 {
+    /**
+     * Complexity: O(log N)
+     */
     public function search(mixed $needle, array $haystack): int|null
     {
         return $this->searchRecursive($needle, $haystack, 0, count($haystack) - 1);
@@ -18,8 +21,8 @@ final class BinaryRecursiveSearch
             return $middle;
         }
 
-        // if last element
-        if ($start === $end) {
+        // if last element or empty
+        if ($start >= $end) {
             return null;
         }
 

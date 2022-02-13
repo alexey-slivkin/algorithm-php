@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace App\Arr\Search;
 
-final class BinarySearch
+final class BinarySearch implements SearchInterface
 {
     /**
      * Complexity: O(log N)
-     * @param mixed       $needle
-     * @param list<mixed> $haystack
-     * @return int|null
      */
     public function search(mixed $needle, array $haystack): int|null
     {
