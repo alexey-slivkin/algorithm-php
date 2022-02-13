@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 final class BreadthFirstSearchTest extends TestCase
 {
-
     public function testExistingNode(): void
     {
         $bfs = new BreadthFirstSearch();

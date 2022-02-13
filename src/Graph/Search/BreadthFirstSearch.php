@@ -23,7 +23,7 @@ final class BreadthFirstSearch
 
         /** @var Node $node */
         while ($node = $queue->dequeue()) {
-            if ($visited[$node->getName()]) {
+            if (isset($visited[$node->getName()])) {
                 continue;
             }
 
