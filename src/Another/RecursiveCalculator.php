@@ -6,16 +6,12 @@ namespace App\Another;
 
 final class RecursiveCalculator
 {
-    /**
-     * @param array<float|int> $numbers
-     * @return float
-     */
-    public function sum(array $numbers): float
+    public function sum(int|float ... $numbers): float
     {
         if ($numbers === []) {
             return 0.0;
         }
 
-        return array_pop($numbers) + $this->sum($numbers);
+        return array_pop($numbers) + $this->sum(...$numbers);
     }
 }

@@ -14,7 +14,7 @@ final class RecursiveCalculatorTest extends TestCase
         $calculator = new RecursiveCalculator();
 
 
-        $sum = $calculator->sum([1, 2, 3.3, 5, 4.2]);
+        $sum = $calculator->sum(1, 2, 3.3, 5, 4.2);
 
         self::assertSame(15.5, $sum);
     }
