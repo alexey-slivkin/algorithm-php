@@ -21,8 +21,10 @@ final class BreadthFirstSearch
         $queue = new SplQueue();
         $queue->enqueue($rootNode);
 
-        /** @var Node $node */
-        while ($node = $queue->dequeue()) {
+        while ($queue->isEmpty()) {
+            /** @var Node $node */
+            $node = $queue->dequeue();
+
             if (isset($visited[$node->getName()])) {
                 continue;
             }
