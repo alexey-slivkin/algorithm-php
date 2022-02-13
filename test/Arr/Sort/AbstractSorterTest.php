@@ -65,8 +65,8 @@ abstract class AbstractSorterTest extends TestCase
         $sortedElements = $sorter->sort($elements);
 
         self::assertSame(
-            [22, 9, 6, 5, 4, 4, 3, 2, 1, 0, 0],
-            $sortedElements,
+            implode(',', [22, 9, 6, 5, 4, 4, 3, 2, 1, 0, 0]),
+            implode(',', $sortedElements),
         );
     }
 }
