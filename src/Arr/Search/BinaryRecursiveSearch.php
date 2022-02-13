@@ -11,7 +11,13 @@ final class BinaryRecursiveSearch implements SearchInterface
      */
     public function search(mixed $needle, array $haystack): int|null
     {
-        return $this->searchRecursive($needle, $haystack, 0, count($haystack) - 1);
+        $n = count($haystack);
+
+        if ($n === 0) {
+            return null;
+        }
+
+        return $this->searchRecursive($needle, $haystack, 0, $n - 1);
     }
 
     private function searchRecursive(mixed $needle, array $haystack, int $start, int $end): int|null
@@ -21,8 +27,8 @@ final class BinaryRecursiveSearch implements SearchInterface
             return $middle;
         }
 
-        // if last element or empty
-        if ($start >= $end) {
+        // if last element
+        if ($start === $end) {
             return null;
         }
 
