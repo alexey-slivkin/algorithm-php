@@ -26,47 +26,4 @@ abstract class AbstractSorterTest extends TestCase
             implode(',', $sortedElements),
         );
     }
-
-    public function testSortIntegersDesc(): void
-    {
-        $invertedComparator = new class () implements ComparatorInterface {
-            private ComparatorInterface $decorated;
-
-            public function __construct()
-            {
-                $this->decorated = new IntegerComparator();
-            }
-
-            public function compare(mixed $first, mixed $second): int
-            {
-                return $this->decorated->compare($second, $first);
-            }
-
-            public function firstGreater(mixed $first, mixed $second): bool
-            {
-                return $this->decorated->firstGreater($second, $first);
-            }
-
-            public function secondGreater(mixed $first, mixed $second): bool
-            {
-                return $this->decorated->secondGreater($second, $first);
-            }
-
-            public function equals(mixed $first, mixed $second): bool
-            {
-                return $this->decorated->equals($first, $second);
-            }
-        };
-
-        $sorter = $this->createSorter($invertedComparator);
-
-        $elements = [6, 0, 4, 9, 22, 0, 2, 3, 1, 4, 5];
-
-        $sortedElements = $sorter->sort($elements);
-
-        self::assertSame(
-            implode(',', [22, 9, 6, 5, 4, 4, 3, 2, 1, 0, 0]),
-            implode(',', $sortedElements),
-        );
-    }
 }

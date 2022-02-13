@@ -28,12 +28,15 @@ final class QuickSorter extends AbstractSorter
         $less    = [];
         $greater = [];
         foreach ($elements as $element) {
-            if ($element < $pivot) {
-                $less[] = $element;
-            } elseif ($element > $pivot) {
-                $greater[] = $element;
-            } else {
-                $pivots[] = $pivot;
+            switch ($this->comparator->compare($element, $pivot)) {
+                case $this->comparator::LESS:
+                    $less[] = $element;
+                    break;
+                case $this->comparator::GREATER:
+                    $greater[] = $element;
+                    break;
+                default:
+                    $pivots[] = $pivot;
             }
         }
 

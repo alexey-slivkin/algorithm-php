@@ -6,6 +6,9 @@ namespace App\Arr\Comparator;
 
 interface ComparatorInterface
 {
+    public const LESS    = -1;
+    public const GREATER = 1;
+    public const EQUALS  = 0;
 
     /**
      * @return int
