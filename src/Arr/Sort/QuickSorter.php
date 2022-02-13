@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Arr\Sort;
+
+final class QuickSorter extends AbstractSorter
+{
+    /**
+     * RU: быстрая сортировка
+     * Complexity: avg - O(N*logN); max: O(N^2)
+     */
+    public function sort(array $elements): array
+    {
+        $n = count($elements);
+
+        // base case
+        if ($n < 2) {
+            return $elements;
+        }
+
+        // RU: опорный элемент
+        $pivot = $elements[random_int(0, $n - 1)];
+        // modified. Original not array
+        $pivots = [$pivot];
+
+        $less    = [];
+        $greater = [];
+        foreach ($elements as $element) {
+            if ($element < $pivot) {
+                $less[] = $element;
+            } elseif ($element > $pivot) {
+                $greater[] = $element;
+            } else {
+                $pivots[] = $pivot;
+            }
+        }
+
+        return array_merge($this->sort($less), $pivots, $this->sort($greater));
+    }
+}

@@ -10,6 +10,7 @@ namespace App\Arr\Sort;
 final class SelectionSorter extends AbstractSorter
 {
     /**
+     * RU: Сортировка выборкой
      * Complexity: O(n^2)
      */
     public function sort(array $elements): array
