@@ -20,10 +20,7 @@ abstract class AbstractSearchTest extends TestCase
 
         $foundIndex = $searchService->search($needle, $haystack);
 
-        self::assertSame(
-            implode(",", $expectedIndex),
-            implode(",", $foundIndex),
-        );
+        self::assertSame($expectedIndex, $foundIndex);
     }
 
     public function casesProvider(): iterable

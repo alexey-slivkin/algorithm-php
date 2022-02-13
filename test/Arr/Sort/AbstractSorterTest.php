@@ -22,8 +22,8 @@ abstract class AbstractSorterTest extends TestCase
         $sortedElements = $sorter->sort($elements);
 
         self::assertSame(
-            [0, 0, 1, 2, 3, 4, 4, 5, 6, 9, 22],
-            $sortedElements,
+            implode(',', [0, 0, 1, 2, 3, 4, 4, 5, 6, 9, 22]),
+            implode(',', $sortedElements),
         );
     }
 
@@ -54,7 +54,7 @@ abstract class AbstractSorterTest extends TestCase
 
             public function equals(mixed $first, mixed $second): bool
             {
-               return $this->decorated->equals($first, $second);
+                return $this->decorated->equals($first, $second);
             }
         };
 
