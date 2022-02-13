@@ -20,10 +20,11 @@ final class QuickSorter extends AbstractSorter
         }
 
         // RU: опорный элемент
-        $pivot = $elements[random_int(0, $n - 1)];
+        $pivotKey = random_int(0, $n - 1);
+        $pivot    = $elements[$pivotKey];
         // modified. Original not array
-        $pivots = [$pivot];
 
+        $pivots  = [];
         $less    = [];
         $greater = [];
         foreach ($elements as $element) {
