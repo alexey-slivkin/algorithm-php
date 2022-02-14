@@ -26,7 +26,7 @@ final class SetCoverSearchTest extends TestCase
         );
 
         self::assertSame(
-            [$one, $two, $three, $five],
+            [$one, $two, $five ,$three,],
             $result->getElements(),
         );
     }
