@@ -16,18 +16,18 @@ final class SetCoverSearchTest extends TestCase
 
         $result = $coverSearchService->search(
             [
-                Set::fromArray('ONE', ['ID', 'NV', 'UT',]),
-                Set::fromArray('TWO', ['WA', 'ID', 'MT',]),
-                Set::fromArray('THREE', ['OR', 'NV', 'CA',]),
-                Set::fromArray('FOUR', ['NV', 'UT',]),
-                Set::fromArray('FIVE', ['CA', 'AZ',]),
+                $one = Set::fromArray('ONE', ['ID', 'NV', 'UT',]),
+                $two = Set::fromArray('TWO', ['WA', 'ID', 'MT',]),
+                $three = Set::fromArray('THREE', ['OR', 'NV', 'CA',]),
+                $four = Set::fromArray('FOUR', ['NV', 'UT',]),
+                $five = Set::fromArray('FIVE', ['CA', 'AZ',]),
             ],
-            $needles = Set::fromArray('needles', ['ID', 'NV', 'UT', 'WA', 'MT', 'OR', 'CA', 'AZ']),
+            Set::fromArray('needles', ['ID', 'NV', 'UT', 'WA', 'MT', 'OR', 'CA', 'AZ']),
         );
 
         self::assertSame(
-            $needles->getElements(),
-            array_map(static fn(Set $element) => $element->getName(), $result->getElements()),
+            [$one, $two, $three, $five],
+            $result->getElements(),
         );
     }
 }
