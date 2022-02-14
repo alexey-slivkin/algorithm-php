@@ -34,7 +34,7 @@ final class SetCoverSearch
                 throw new \RuntimeException('Cover not found');
             }
 
-            $needles->diff($covered);
+            $needles = $needles->diff($covered);
 
             $final->add($best);
         }
