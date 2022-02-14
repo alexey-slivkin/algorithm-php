@@ -25,8 +25,8 @@ final class SetCoverSearchTest extends TestCase
             Set::fromArray('needles', ['ID', 'NV', 'UT', 'WA', 'MT', 'OR', 'CA', 'AZ']),
         );
 
-        self::assertSame(
-            [$one, $two, $five ,$three,],
+        self::assertEquals(
+            [$one, $two, $three, $five],
             $result->getElements(),
         );
     }
